@@ -80,6 +80,28 @@ found at index 5
 Binary search on unsorted data is incorrect because choosing a half would not
 tell you where the target can be.
 
+### 🔍 Full trace, one row per loop (target = 23)
+
+The list, with indexes:
+
+```
+index:   0   1   2   3    4    5    6
+value:   2   5   8   12   16   23   38
+```
+
+`left` and `right` mark the section still worth searching. `middle` is the midpoint we check each round.
+
+| Loop | `left` | `right` | `middle = (left+right)//2` | `numbers[middle]` | Compare to 23 | What we do |
+|------|--------|---------|-----------------------------|--------------------|----------------|------------|
+| 1 | 0 | 6 | (0+6)//2 = **3** | 12 | 12 < 23 → target is to the **right** | throw away left half: `left = 3+1 = 4` |
+| 2 | 4 | 6 | (4+6)//2 = **5** | 23 | 23 == 23 → **match!** | `return 5` 🛑 |
+
+Each loop **halves** what's left to search — that's why it's `O(log n)`. Notice the two "steering" lines:
+- `numbers[middle] < target` → the answer must be bigger, so move `left` up past the middle.
+- else → the answer must be smaller, so move `right` down below the middle.
+
+**Why it needs sorted data:** the whole trick is "if the middle is too small, the answer is definitely to the right." That's only guaranteed to be true when the list is in order. On unsorted data, throwing away a half could throw away the answer.
+
 ---
 
 ## Exercises

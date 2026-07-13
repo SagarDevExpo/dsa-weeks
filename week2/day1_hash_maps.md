@@ -69,6 +69,19 @@ def two_sum(numbers, target):
 Time: `O(n)`  
 Space: `O(n)`
 
+### 🧩 Why this beats checking every pair
+
+The obvious way is two nested loops comparing every pair — that's `O(n²)`. The hash-map trick does it in **one pass** by remembering numbers as it goes. For each number it asks *"have I already seen the partner I need?"* — an `O(1)` dict lookup.
+
+Trace `two_sum([2, 7, 11, 15], 9)`. `seen` starts `{}` (stores `number → its index`).
+
+| `index` | `number` | `needed = 9 - number` | `needed in seen?` | Action |
+|---------|----------|------------------------|--------------------|--------|
+| 0 | 2 | 7 | No (empty) | store `2 → 0`, `seen = {2: 0}` |
+| 1 | 7 | 2 | **Yes! 2 is at index 0** | `return [0, 1]` 🛑 |
+
+It returns `[0, 1]` — positions of the two numbers (2 and 7) that sum to 9. This is the same pattern from Week 3 dictionaries; here you're seeing *why* it's fast: trading a little memory (`seen`) for a huge speed win. Whenever a problem says "find two things that relate to a target," reach for this.
+
 ---
 
 ## Exercises

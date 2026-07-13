@@ -1,6 +1,6 @@
-# Week 10 Prerequisites: Choosing Efficient Patterns
+# Week 5 Prerequisites: Choosing Efficient Patterns
 
-Week 10 combines sorting, divide-and-conquer, heaps, sliding windows, and final practice. The main skill is choosing the pattern that avoids unnecessary work.
+Week 5 combines sorting, divide-and-conquer, heaps, sliding windows, and final practice. The main skill is choosing the pattern that avoids unnecessary work.
 
 ## 1. Sorting changes what is easy
 
@@ -117,7 +117,7 @@ Before choosing code, name the likely pattern:
 
 The win is recognizing the shape before typing.
 
-## 8. Week 10 thinking habit
+## 8. Week 5 thinking habit
 
 For every problem, ask:
 

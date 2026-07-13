@@ -1,6 +1,6 @@
-# Week 9 Prerequisites: Trees, Graphs, and Traversal
+# Week 4 Prerequisites: Trees, Graphs, and Traversal
 
-Week 9 is about connected data. The important question becomes: how do I visit everything without getting lost?
+Week 4 is about connected data. The important question becomes: how do I visit everything without getting lost?
 
 ## 1. A tree is connected directionally
 
@@ -111,7 +111,7 @@ Which neighbors should I try next?
 
 This keeps DFS/BFS code less tangled.
 
-## 8. Week 9 thinking habit
+## 8. Week 4 thinking habit
 
 Before solving, identify:
 

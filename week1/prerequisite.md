@@ -1,6 +1,6 @@
-# Week 6 Prerequisites: Entering DSA Thinking
+# Week 1 Prerequisites: Entering DSA Thinking
 
-Week 6 starts formal DSA. The biggest change is that you now care not only whether code works, but how the work grows as input gets bigger.
+Week 1 starts formal DSA. The biggest change is that you now care not only whether code works, but how the work grows as input gets bigger.
 
 ## 1. DSA is about choosing a shape
 
@@ -102,7 +102,7 @@ Mental model:
 What have I accumulated up to this point?
 ```
 
-## 8. Week 6 trace habit
+## 8. Week 1 trace habit
 
 For every algorithm, trace with a table:
 

@@ -57,6 +57,22 @@ def max_window_sum(numbers, k):
 Time: `O(n)`  
 Extra space: `O(1)`
 
+### 🧩 Why sliding beats re-summing
+
+The slow version re-adds `k` numbers for **every** window. The trick: neighbouring windows overlap almost entirely — only **one** number leaves the left and **one** enters the right. So instead of re-summing, just adjust: `- leaving + entering`. That turns `O(n×k)` into `O(n)`.
+
+Trace `max_window_sum([2, 1, 5, 1, 3, 2], k=3)`:
+
+First window is `[2, 1, 5]` → `window_sum = 8`, `best = 8`.
+
+| `right` | leaving `numbers[left]` | entering `numbers[right]` | new `window_sum` | window now | `best` |
+|---------|--------------------------|----------------------------|-------------------|-------------|--------|
+| 3 | `numbers[0]`=2 | `numbers[3]`=1 | 8 - 2 + 1 = **7** | `[1,5,1]` | 8 |
+| 4 | `numbers[1]`=1 | `numbers[4]`=3 | 7 - 1 + 3 = **9** | `[5,1,3]` | **9** |
+| 5 | `numbers[2]`=5 | `numbers[5]`=2 | 9 - 5 + 2 = **6** | `[1,3,2]` | 9 |
+
+Answer: `9` (the window `[5,1,3]`). Each step is just two arithmetic ops — one subtract, one add — no matter how big `k` is. That's the sliding-window superpower.
+
 ---
 
 ## Part 3: Variable Window

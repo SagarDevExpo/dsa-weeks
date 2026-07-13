@@ -1,4 +1,4 @@
-# Day 5: Week 8 Practice
+# Day 5: Week 3 Practice
 
 **Time:** ~50 minutes
 

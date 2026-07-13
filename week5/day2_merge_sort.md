@@ -67,6 +67,28 @@ There are about `log n` split levels. Each level merges `n` values.
 Time: `O(n log n)`  
 Extra space: `O(n)`
 
+### 🧩 The whole recursion in one picture
+
+Merge sort is recursion with a simple promise: *"I don't know how to sort a big list, but I DO know how to (a) split it in half, (b) trust myself to sort each half, and (c) merge two sorted halves."* The base case (`len <= 1`) is "a list this small is already sorted."
+
+Trace `merge_sort([8, 3, 5, 1])`. Read **down** = splitting, **up** = merging back sorted:
+
+```text
+merge_sort([8, 3, 5, 1])
+   split → left half [8,3], right half [5,1]
+   ├─ merge_sort([8, 3])
+   │     ├─ merge_sort([8]) → [8]   (len 1, base case)
+   │     ├─ merge_sort([3]) → [3]   (len 1, base case)
+   │     └─ merge([8], [3]) → [3, 8]   ← sorted!
+   ├─ merge_sort([5, 1])
+   │     ├─ merge_sort([5]) → [5]
+   │     ├─ merge_sort([1]) → [1]
+   │     └─ merge([5], [1]) → [1, 5]   ← sorted!
+   └─ merge([3, 8], [1, 5]) → [1, 3, 5, 8]   ← fully sorted!
+```
+
+Notice the pattern: it keeps splitting until each piece is a single item (which is trivially "sorted"), then `merge` stitches pairs back together in order as the calls return. The sorting *happens during the merges on the way back up* — same "answers bubble up" idea as `max_depth`, just combining lists instead of numbers.
+
 ---
 
 ## Exercises

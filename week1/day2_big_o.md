@@ -18,6 +18,19 @@ It does not measure exact seconds.
 
 If a list doubles in size, how much more work is needed?
 
+### 🧩 The "finding a name in a phone book" analogy
+
+Big O is just answering: *"if the input gets 10× bigger, does my work get 10× bigger? 100×? barely change?"* Picture searching a phone book with `n` names:
+
+| Big O | Nickname | Phone-book version | If input doubles... |
+|-------|----------|--------------------|----------------------|
+| `O(1)` | constant | flip straight to page 1 | work stays the same |
+| `O(log n)` | logarithmic | open the middle, throw away half, repeat | work grows by just **one** step |
+| `O(n)` | linear | read every name top to bottom | work **doubles** |
+| `O(n²)` | quadratic | compare every name with every other name | work **quadruples** |
+
+The whole point: we care about the *shape of the growth*, not the exact time. A slow-growing curve wins on big inputs even if it's clumsier on tiny ones. Lower on this table = faster as data grows.
+
 ---
 
 ## Part 2: O(1) — Constant Time

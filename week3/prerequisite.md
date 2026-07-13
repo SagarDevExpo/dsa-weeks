@@ -1,6 +1,6 @@
-# Week 8 Prerequisites: Pointers, Links, and Recursive Shape
+# Week 3 Prerequisites: Pointers, Links, and Recursive Shape
 
-Week 8 introduces problems where the path matters: recursion, linked lists, and two pointers.
+Week 3 introduces problems where the path matters: recursion, linked lists, and two pointers.
 
 ## 1. Recursion needs two promises
 
@@ -109,7 +109,7 @@ next_node
 
 This is not childish. It is exactly how experienced engineers reason about pointer changes.
 
-## 8. Week 8 thinking habit
+## 8. Week 3 thinking habit
 
 At each step, ask:
 

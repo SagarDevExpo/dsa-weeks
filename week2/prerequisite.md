@@ -1,6 +1,6 @@
-# Week 7 Prerequisites: Fast Lookup and Order Rules
+# Week 2 Prerequisites: Fast Lookup and Order Rules
 
-Week 7 is about containers that remember things in special ways: dictionaries, sets, stacks, and queues.
+Week 2 is about containers that remember things in special ways: dictionaries, sets, stacks, and queues.
 
 ## 1. Fast lookup is the main idea
 
@@ -121,7 +121,7 @@ My queue stores ___.
 
 This prevents "I know I need a dictionary but I don't know what goes in it" confusion.
 
-## 8. Week 7 thinking habit
+## 8. Week 2 thinking habit
 
 When a solution feels too nested, ask:
 

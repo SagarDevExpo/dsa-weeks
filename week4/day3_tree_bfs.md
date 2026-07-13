@@ -59,6 +59,31 @@ Each node enters and leaves the queue once.
 Time: `O(n)`  
 Space: `O(n)`
 
+### 🧩 Why a queue gives level-by-level order
+
+DFS (recursion) plunges deep down one branch first. BFS instead visits **level by level** — and a queue (First In, First Out) is exactly what makes that happen: you process nodes in the *same order you discovered them*, so a whole level is handled before its children.
+
+Trace `bfs(root)` on this tree:
+```text
+        10
+       /  \
+      5    15
+     / \
+    2   7
+```
+
+`queue` starts as `[10]`, `result` starts empty. Each loop: pop the front, record it, then push its children to the back.
+
+| Step | pop (front) | add to `result` | push children | `queue` after (front→back) |
+|------|-------------|------------------|----------------|-----------------------------|
+| 1 | 10 | `[10]` | 5, 15 | `[5, 15]` |
+| 2 | 5  | `[10, 5]` | 2, 7 | `[15, 2, 7]` |
+| 3 | 15 | `[10, 5, 15]` | (none) | `[2, 7]` |
+| 4 | 2  | `[10, 5, 15, 2]` | (none) | `[7]` |
+| 5 | 7  | `[10, 5, 15, 2, 7]` | (none) | `[]` → loop ends |
+
+Result: `[10, 5, 15, 2, 7]` — top level, then next level, then the bottom. Because 5 and 15 were queued before 2 and 7, they're processed first. That FIFO ordering *is* the level-by-level behaviour. (Swap the queue for a stack and you'd get DFS instead.)
+
 ---
 
 ## Part 3: Values by Level

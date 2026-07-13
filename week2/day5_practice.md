@@ -1,4 +1,4 @@
-# Day 5: Week 7 Practice
+# Day 5: Week 2 Practice
 
 **Time:** ~45 minutes
 

@@ -1,4 +1,4 @@
-# Day 5: Week 6 Practice
+# Day 5: Week 1 Practice
 
 **Time:** ~45 minutes
 
@@ -43,7 +43,7 @@ Write the time and space complexity beneath every function.
 
 ## Graduation Check
 
-Move to Week 7 when you can explain:
+Move to Week 2 when you can explain:
 
 - Why one loop is usually `O(n)`
 - Why nested loops are often `O(n²)`

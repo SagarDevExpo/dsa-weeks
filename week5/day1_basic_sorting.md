@@ -32,6 +32,25 @@ def bubble_sort(numbers):
 
 Large values “bubble” toward the end.
 
+### 🧩 Watch one full pass of the inner loop
+
+The inner loop walks left to right comparing each pair of neighbours; if the left one is bigger, they **swap**. After each full pass, the largest unsorted value has floated to its correct spot at the end.
+
+Trace the **first pass** on `[4, 2, 3, 1]` (the inner loop, comparing `numbers[index]` with its right neighbour):
+
+| `index` | pair compared | left > right? | list after |
+|---------|---------------|----------------|------------|
+| 0 | `4, 2` | 4 > 2 ✅ swap | `[2, 4, 3, 1]` |
+| 1 | `4, 3` | 4 > 3 ✅ swap | `[2, 3, 4, 1]` |
+| 2 | `4, 1` | 4 > 1 ✅ swap | `[2, 3, 1, 4]` |
+
+After pass 1, `4` (the biggest) has bubbled to the far right — it's now locked in place. The outer loop's `end` shrinks by one so the next pass ignores that settled tail:
+
+- Pass 2 works on `[2, 3, 1]` → becomes `[2, 1, 3, 4]`
+- Pass 3 works on `[2, 1]` → becomes `[1, 2, 3, 4]` ✅ sorted
+
+Two nested loops (each up to `n`) = `n × n` comparisons = **O(n²)**. That's why bubble sort is fine for learning but slow for big lists compared to merge sort's `O(n log n)`.
+
 ---
 
 ## Part 2: Selection Sort
